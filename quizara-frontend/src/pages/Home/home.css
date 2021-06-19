@@ -1,0 +1,19 @@
+.Home {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+}
+a {
+  color: #efefef;
+  background-color: #ffffff50;
+  padding: 0.5rem 1rem;
+  text-decoration: auto;
+  text-transform: uppercase;
+  font-weight: bold;
+}

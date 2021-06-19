@@ -1,0 +1,8 @@
+.quiz-wrapper {
+  display: flex;
+  width: fit-content;
+
+  padding: 1rem;
+  margin: 1rem auto;
+  border: 1px solid grey;
+}

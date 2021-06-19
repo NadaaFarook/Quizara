@@ -1,0 +1,25 @@
+.red {
+  background-color: rgb(255 95 95);
+  color: whitesmoke;
+}
+.green {
+  background-color: rgb(110, 255, 110);
+}
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 1rem auto;
+}
+h1,
+h3,
+p {
+  margin: 0.2rem;
+}
+p {
+  font-size: 25px;
+  background-color: #ffffff59;
+  width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 4rem;
+}
