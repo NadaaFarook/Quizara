@@ -5,6 +5,9 @@
 .green {
   background-color: rgb(110, 255, 110);
 }
+.Quiz{
+    height: 100vh;
+}
 .buttons {
   display: flex;
   flex-direction: column;

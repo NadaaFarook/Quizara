@@ -2,6 +2,7 @@ import { TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { SignUp } from "../../services/auth.service";
+import {Link} from 'react-router-dom'
 import './signup.css'
 export default function Signup() {
   const [user, setUser] = useState({
@@ -20,6 +21,8 @@ export default function Signup() {
   return (
     <div className="Signup">
       <form noValidate autoComplete="off">
+
+        <h2>Signup</h2>
         <TextField
           placeholder="Enter your Name"
           id="name"
@@ -43,6 +46,7 @@ export default function Signup() {
         <br />
         <button onClick={SignUpSubmit}>Submit</button>
       </form>
+      <p>Already signed up ! <Link to="login">Login</Link></p>
       <ToastContainer />
     </div>
   );

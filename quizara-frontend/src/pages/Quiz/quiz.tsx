@@ -67,7 +67,7 @@ const Quiz = () => {
   };
   console.log(isOptionsEnabled);
   return (
-    <div>
+    <div className="Quiz">
       <h5>Score {totalScore}</h5>
       <h1>{name}</h1>
       <p>{questions[currentQuestion].question}</p>
