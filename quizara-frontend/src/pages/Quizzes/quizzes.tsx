@@ -36,7 +36,7 @@ const Quizzes = () => {
           return (
             <div className="quiz-wrapper">
               <Link
-                to="/quizzes/1234"
+                to={`/quizzes/${quiz._id}`}
                 onClick={() =>
                   dispatch({ type: "QUIZ_QUESTIONS", payload: { quiz } })
                 }

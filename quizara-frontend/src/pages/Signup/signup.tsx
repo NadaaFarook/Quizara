@@ -2,7 +2,7 @@ import { TextField } from "@material-ui/core";
 import React, { useState } from "react";
 import { ToastContainer } from "react-toastify";
 import { SignUp } from "../../services/auth.service";
-
+import './signup.css'
 export default function Signup() {
   const [user, setUser] = useState({
     name: null,
@@ -18,7 +18,7 @@ export default function Signup() {
     setUser({ ...user, [id]: value });
   };
   return (
-    <div>
+    <div className="Signup">
       <form noValidate autoComplete="off">
         <TextField
           placeholder="Enter your Name"

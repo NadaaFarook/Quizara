@@ -23,3 +23,8 @@ p {
   margin: 1rem auto;
   padding: 0.5rem 4rem;
 }
+@media screen and (max-width : 600px) {
+    .buttons {
+        width: 60%;
+      }
+}

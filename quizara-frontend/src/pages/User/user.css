@@ -1,0 +1,10 @@
+.User {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.links {
+  display: flex;
+  justify-content: space-evenly;
+}

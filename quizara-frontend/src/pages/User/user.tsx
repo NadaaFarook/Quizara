@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import AxiosCall from "../../services/api-calls";
 import { Error } from "../../types/Quiz.types";
-
+import "./user.css";
 export default function User() {
   const { token } = useAuth();
 
@@ -28,7 +29,7 @@ export default function User() {
   console.log(user, error);
 
   return (
-    <div>
+    <div className="User">
       {error !== null ? (
         <p>{error}</p>
       ) : (
@@ -37,7 +38,14 @@ export default function User() {
             {" "}
             <h2>Name : {user.name}</h2>
             <h3>Email : {user.email}</h3>
-            <button onClick={()=>localStorage.removeItem('token')}>Logout</button>
+            <button onClick={() => localStorage.removeItem("token")}>
+              Logout
+            </button>
+            <div className="links">
+              <Link to="/login">Login</Link>
+              <br />
+              <Link to="/signup">Signup</Link>
+            </div>
           </>
         )
       )}

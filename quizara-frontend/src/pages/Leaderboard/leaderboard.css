@@ -1,0 +1,23 @@
+table{
+    width: 100%;
+    font-size: 20px;
+    border-collapse: collapse;
+}
+thead{
+    font-weight: bold;
+}
+.Leaderboard{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  h2{
+      margin-bottom: 1rem;
+  }

@@ -34,12 +34,20 @@ export default function Leaderboard() {
     .slice(0, 5);
 
   return (
-    <div>
+    <div className="Leaderboard">
       {error !== null ? (
         <p>{error}</p>
       ) : (
         leaderboard !== [] && (
+          <>
+          <h2>Leaderboard
+            <br /><span>(Top 5 players)</span></h2>
           <table>
+            <thead>
+              <td>Name</td>
+              <td>Quiz Name</td>
+              <td>Score</td>
+            </thead>
             {sortedLeaderboard.map((item: any) => {
               return (
                 <tbody>
@@ -50,6 +58,7 @@ export default function Leaderboard() {
               );
             })}
           </table>
+          </>
         )
       )}
     </div>

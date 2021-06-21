@@ -1,6 +1,5 @@
 import { InitialState, Action, Quiz } from "../types/Quiz.types";
 
-
 const initialState: InitialState = {
   user: null,
   allQuiz: [],
@@ -31,12 +30,6 @@ const Quizreducer = (state: InitialState, action: Action) => {
         },
       };
 
-
-      // width: 70%;
-      // padding: 1rem;
-      // margin: 0.5rem;
-
-
     case "TOGGLE_ISOPTIONSENABLED":
       return {
         ...state,
@@ -55,6 +48,4 @@ const Quizreducer = (state: InitialState, action: Action) => {
       };
   }
 };
-
-//const [state, dispatch] = useReducer(Quizreducer, initialState);
 export { Quizreducer, initialState };

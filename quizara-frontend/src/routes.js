@@ -19,8 +19,6 @@ const RoutesHolder = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
-        {/* <Route path="*" element={<Error404 />} />
-         */}
         <Route path="/signup" element={<Signup />} />
         <Redirect path="/quizzes" element={<Quizzes />} />
         <Redirect path="/quizzes/:quizId" element={<Quiz />} />

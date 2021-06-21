@@ -25,7 +25,3 @@ export const useAuth = () => {
 };
 
 export default AuthContextProvider;
-
-
-// test@gmail.com
-// test123
