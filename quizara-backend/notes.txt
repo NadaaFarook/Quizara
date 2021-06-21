@@ -1,0 +1,3 @@
+res.status(401).json({success : false, message : 'Error in adding user to the database . Please try again after some time'})
+
+res.status().json({success : true})
