@@ -1,33 +1,62 @@
-.red {
-  background-color: rgb(255 95 95);
-  color: whitesmoke;
-}
-.green {
-  background-color: rgb(110, 255, 110);
-}
-.Quiz{
-    height: 100vh;
-}
-.buttons {
+.Quiz {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  justify-content:flex-start;
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+}
+.Quiz .progress {
+  margin-bottom: 3rem;
+  height: 0.5rem;
+}
+.Quiz .MuiLinearProgress-barColorPrimary {
+  background-color: #006351 !important;
+  border-radius: 0 20px 20px 0;
+}
+.Quiz .MuiLinearProgress-colorPrimary {
+  background-color: rgb(15 41 36) !important ;
+}
+.Quiz .buttons {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   margin: 1rem auto;
 }
-h1,
-h3,
-p {
-  margin: 0.2rem;
+.Quiz h2 {
+  font-weight: 300;
+  font-size: 20px;
+  padding: 1rem;
 }
-p {
+.Quiz .quiz-header{
+  display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    padding: 1rem;
+}
+.Quiz .buttons button {
+  border: 4px solid #006351;
+  background-color: rgba(255, 255, 255, 0);
+  color: #eeebdd;
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: larger;
+}
+
+/* p {
   font-size: 25px;
   background-color: #ffffff59;
   width: fit-content;
   margin: 1rem auto;
   padding: 0.5rem 4rem;
 }
-@media screen and (max-width : 600px) {
-    .buttons {
-        width: 60%;
-      }
+ */
+
+ .red {
+  background-color: #982323 !important;
+  color: whitesmoke;
+}
+.green {
+  background-color: #3d8637 !important;
 }

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import "./login.css";
+
 import {  TextField } from "@material-ui/core";
 import { useAuth } from "../../context/AuthContext";
 
 import { LogIn } from "../../services/auth.service";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
-
+import "./login.css";
 export default function Login() {
   const { token, setToken } = useAuth();
   const [user, setUser] = useState({
@@ -24,8 +24,9 @@ export default function Login() {
 
   return (
     <div className="Login">
+       <h1>Login</h1>
       <form noValidate autoComplete="off">
-        <h3>Login</h3>
+       
         <TextField
           placeholder="Enter your Email"
           id="email"
@@ -42,7 +43,7 @@ export default function Login() {
         <br />
         <button onClick={(e)=>LogInSubmit(e)}>Submit</button>
       </form>
-      <p>Didn't signup yet ! <Link to="signup">Signup</Link></p>
+      <p>Didn't signup yet ! <Link to="/signup">Signup</Link></p>
       <ToastContainer />
     </div>
   );

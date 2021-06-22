@@ -2,19 +2,25 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  max-width: 600px;
+  text-align: center;
+  margin: auto;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: normal;
 }
-.links {
+.Home h1{
+  font-weight: 300;
+}
+.Home .links {
   display: flex;
   flex-direction: column;
-  margin: auto;
   width: 80%;
 }
-a {
+.Home .links a {
   color: #efefef;
-  background-color: #ffffff50;
-  padding: 0.5rem 1rem;
-  text-decoration: auto;
-  text-transform: uppercase;
-  font-weight: bold;
+    background-color: #006351;
+    padding: 1rem 1rem;
+    text-decoration: auto;
+    text-transform: uppercase;
 }
-

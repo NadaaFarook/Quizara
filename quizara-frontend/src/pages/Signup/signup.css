@@ -1,6 +1,35 @@
-.Signup{
+.Signup {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-}
+    justify-content: space-evenly;
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+  }
+  .Signup h1 {
+    font-weight: 300;
+  }
+  .Signup form {
+      width: fit-content;
+      margin: 0 auto;
+  }
+  .Signup button{
+      width: -webkit-fill-available;
+      margin: 1rem;
+      padding: 1rem;
+      font-size: large;
+      color: #006351;
+      text-transform: uppercase;
+      font-weight: 500;
+      background-color: #EEEBDD;
+  }
+  
+  .Signup p a{
+      
+          color: #006351;
+          font-weight: bold;
+          text-decoration: none;
+      
+  }
+  

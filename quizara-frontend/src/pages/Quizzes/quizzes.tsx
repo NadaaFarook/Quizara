@@ -26,7 +26,7 @@ const Quizzes = () => {
     })();
   }, [token]);
   return (
-    <div>
+    <div className="Quizzes">
       <h1>Quizzes</h1>
       {error !== null ? (
         <p>{error}</p>
@@ -41,7 +41,7 @@ const Quizzes = () => {
                   dispatch({ type: "QUIZ_QUESTIONS", payload: { quiz } })
                 }
               >
-                <h1>{quiz.name}</h1>
+                <h2>{quiz.name}</h2>
 
                 <p>Total Score : {quiz.totalScore}</p>
               </Link>

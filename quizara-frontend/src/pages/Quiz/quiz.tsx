@@ -3,12 +3,15 @@ import { useNavigate } from "react-router";
 import { useAuth } from "../../context/AuthContext";
 import { useQuiz } from "../../context/QuizContext";
 import AxiosCall from "../../services/api-calls";
+import { LinearProgress } from "@material-ui/core";
 import "./quiz.css";
 
 import { Options, Questions } from "../../types/Quiz.types";
+import { useState } from "react";
 const Quiz = () => {
   const navigate = useNavigate();
   const { token } = useAuth();
+
   const {
     user,
     state: {
@@ -19,12 +22,17 @@ const Quiz = () => {
     },
     dispatch,
   } = useQuiz();
+
+  const [progress, setProgress] = useState<number>(
+    (100 / questions.length) * (currentQuestion + 1)
+  );
   const onOptionsClick = (
     option: Options,
     questions: Questions[],
     currentQuestion: number
   ): void => {
     console.log(option, questions);
+    setProgress((100 / questions.length) * (currentQuestion + 1));
     dispatch({
       type: "SELECT_OPTION",
       payload: {
@@ -45,6 +53,7 @@ const Quiz = () => {
     if (currentQuestion !== questions.length - 1) {
       setTimeout(() => {
         dispatch({ type: "NEXT" });
+        setProgress((100 / questions.length) * (currentQuestion + 1));
         dispatch({ type: "TOGGLE_ISOPTIONSENABLED" });
       }, 2000);
     } else {
@@ -66,11 +75,23 @@ const Quiz = () => {
     }
   };
   console.log(isOptionsEnabled);
+
+  console.log(progress, questions.length, currentQuestion);
   return (
     <div className="Quiz">
-      <h5>Score {totalScore}</h5>
-      <h1>{name}</h1>
-      <p>{questions[currentQuestion].question}</p>
+      <LinearProgress
+        className="progress"
+        variant="determinate"
+        value={progress}
+      />
+
+      <div className="quiz-header">
+        <p>
+          {currentQuestion + 1} / {questions.length}
+        </p>{" "}
+        <p>Score {totalScore}</p>
+      </div>
+      <h2>{questions[currentQuestion].question}</h2>
       <div className="buttons">
         {questions[currentQuestion].options.map((option: any) => {
           return (
@@ -87,11 +108,11 @@ const Quiz = () => {
           );
         })}
       </div>
-      <button
+      {/* <button
         onClick={() => dispatch({ type: "NEXT", payload: { totalScore: 0 } })}
       >
         SKIP
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -1,5 +1,4 @@
-.App {
-  background: url(https://res.cloudinary.com/cloudimageapi/image/upload/v1624097713/Group_93_1_1_tx0avc.png);
+/* background: url(https://res.cloudinary.com/cloudimageapi/image/upload/v1624097713/Group_93_1_1_tx0avc.png);
   background-repeat: no-repeat;
   color: white;
   background-size: cover;
@@ -7,9 +6,14 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
+
+.App {
+  background-color: #1b1717;
+  color: #eeebdd;
 }
 
+/* 
 button {
   padding: 0.5rem 2rem;
   margin: 1rem;
@@ -20,4 +24,4 @@ button {
   border: 1px solid #b62caa;
   letter-spacing: 2px;
   border-radius: 20px;
-}
+} */

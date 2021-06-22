@@ -20,9 +20,10 @@ export default function Signup() {
   };
   return (
     <div className="Signup">
+      <h1>Signup</h1>
       <form noValidate autoComplete="off">
 
-        <h2>Signup</h2>
+        
         <TextField
           placeholder="Enter your Name"
           id="name"
@@ -46,7 +47,7 @@ export default function Signup() {
         <br />
         <button onClick={SignUpSubmit}>Submit</button>
       </form>
-      <p>Already signed up ! <Link to="login">Login</Link></p>
+      <p>Already signed up ! <Link to="/login">Login</Link></p>
       <ToastContainer />
     </div>
   );

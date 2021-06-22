@@ -11,13 +11,19 @@ thead{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
 }
 td, th {
-    border: 1px solid #dddddd;
+    border: 1px solid #03846b;
     text-align: left;
     padding: 8px;
   }
 
-  h2{
-      margin-bottom: 1rem;
+  .Leaderboard h2{
+    margin-bottom: 1rem;
+    align-self: center;
+    font-weight: 500;
+    color: #03846b;
   }
