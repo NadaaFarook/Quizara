@@ -6,7 +6,7 @@ const Result = () => {
   const {
     state: {
       totalScore,
-      quiz: { name, questions },
+      quiz: {  questions },
     },
   } = useQuiz();
   return (
