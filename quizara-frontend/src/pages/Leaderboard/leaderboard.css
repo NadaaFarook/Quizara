@@ -16,7 +16,7 @@ thead{
     margin: auto;
 }
 td, th {
-    border: 1px solid #03846b;
+    border: 4px solid #006351;
     text-align: left;
     padding: 8px;
   }
@@ -25,5 +25,5 @@ td, th {
     margin-bottom: 1rem;
     align-self: center;
     font-weight: 500;
-    color: #03846b;
+    color: #006351;
   }

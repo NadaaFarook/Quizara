@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useQuiz } from "../../context/QuizContext";
 import { Questions } from "../../types/Quiz.types";
 import "./result.css";
@@ -6,14 +7,16 @@ const Result = () => {
   const {
     state: {
       totalScore,
-      quiz: {  questions },
+      quiz: { questions },
     },
   } = useQuiz();
   return (
     <div className="Result">
       <h1>Result</h1>
       <h3>
-        {totalScore < 5 ? `Maybe try again ? ${totalScore} ponts is too less` : `Supperb!! You scored ${totalScore} points`}
+        {totalScore < 5
+          ? `Maybe try again ? ${totalScore} ponts is too less`
+          : `Supperb!! You scored ${totalScore} points`}
       </h3>
 
       {questions.map((question: Questions) => {
@@ -38,6 +41,9 @@ const Result = () => {
           </div>
         );
       })}
+      <p>
+        Go back to <Link to="/">Home</Link>
+      </p>
     </div>
   );
 };

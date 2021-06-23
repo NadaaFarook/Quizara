@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useAuth } from "../../context/AuthContext";
 import AxiosCall from "../../services/api-calls";
 import { Error } from "../../types/Quiz.types";
@@ -9,7 +9,7 @@ export default function User() {
 
   const [user, setUser] = useState<any>([]);
   const [error, setError] = useState<Error>(null);
-
+  console.log(user);
   useEffect(() => {
     (async () => {
       const response = await AxiosCall({
@@ -28,6 +28,11 @@ export default function User() {
 
   console.log(user, error);
 
+  type GamePlayedType = {
+    name: string;
+    totalScore: number;
+  };
+
   return (
     <div className="User">
       {error !== null ? (
@@ -36,16 +41,24 @@ export default function User() {
         user !== [] && (
           <>
             {" "}
-            <h2>Name : {user.name}</h2>
-            <h3>Email : {user.email}</h3>
+            <h1>User Details</h1>
+            <p>Name : {user.name}</p>
+            <p>Email : {user.email}</p>
             <button onClick={() => localStorage.removeItem("token")}>
               Logout
             </button>
-            <div className="links">
-              <Link to="/login">Login</Link>
-              <br />
-              <Link to="/signup">Signup</Link>
-            </div>
+           
+           <br />
+           <h2>Games Played</h2>
+            <table>{
+              user?.gamesPlayed?.map((game : GamePlayedType) =>{
+                return(
+                  <tbody>
+                    <td>{game.name}</td>
+                    <td>{game.totalScore} points</td>
+                  </tbody>
+                )
+              })}</table>
           </>
         )
       )}

@@ -3,14 +3,8 @@ const router = express.Router();
 const userSchema = require("../utils/joi.validate.js");
 const { User } = require("../models/user.model.js");
 const bcrypt = require("bcrypt");
-const jwt = require('jsonwebtoken')
-const {verifyToken} = require("../utils/verifyToken")
-
-const env = {
-  TOKEN_SECRET : 'abrakadabra'
-}
-
-
+const jwt = require("jsonwebtoken");
+const { verifyToken } = require("../utils/verifyToken");
 
 router.route("/signup").post(async (req, res) => {
   const userDetails = req.body;
@@ -60,25 +54,27 @@ router.route("/login").post(async (req, res) => {
     return res
       .status(401)
       .json({ success: false, message: "Wrong password.Please try again" });
-const token = await jwt.sign({_id: user._id} , env.TOKEN_SECRET)
-  res.status(200).json({ success: true, user: user._id , token});
-  console.log(res, req , res.header)
+  const token = await jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+  res.status(200).json({ success: true, user: user._id, token });
+  console.log(res, req, res.header);
 });
 
-
-
-router.route("/")
-.get(verifyToken ,async (req , res) =>{
-const { _id } = req.user;
-try{
-  const user = await User.find({_id})
-  console.log(user)
-res.json({success : true , user : {name: user[0].name , email : user[0].email}})
-}catch{
-  res.json({ err: err.message });
-}
-  
-})
+router.route("/").get(verifyToken, async (req, res) => {
+  const { _id } = req.user;
+  try {
+    const user = await User.find({ _id });
+    console.log(user);
+    res.json({
+      success: true,
+      user: {
+        name: user[0].name,
+        email: user[0].email,
+        gamesPlayed: user[0].gamesPlayed,
+      },
+    });
+  } catch {
+    res.json({ err: err.message });
+  }
+});
 
 module.exports = router;
-

@@ -30,7 +30,7 @@ const Quizreducer = (state: InitialState, action: Action) => {
         },
       };
 
-    case "TOGGLE_ISOPTIONSENABLED":
+    case "TOGGLE_IS_OPTIONS_ENABLED":
       return {
         ...state,
         isOptionsEnabled: !state.isOptionsEnabled,

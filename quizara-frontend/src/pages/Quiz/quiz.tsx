@@ -40,7 +40,7 @@ const Quiz = () => {
         currentQuestionId: questions[currentQuestion]._id,
       },
     });
-    dispatch({ type: "TOGGLE_ISOPTIONSENABLED" });
+    dispatch({ type: "TOGGLE_IS_OPTIONS_ENABLED" });
     dispatch({
       type: "SCORE",
       payload: {
@@ -54,7 +54,7 @@ const Quiz = () => {
       setTimeout(() => {
         dispatch({ type: "NEXT" });
         setProgress((100 / questions.length) * (currentQuestion + 1));
-        dispatch({ type: "TOGGLE_ISOPTIONSENABLED" });
+        dispatch({ type: "TOGGLE_IS_OPTIONS_ENABLED" });
       }, 2000);
     } else {
       AxiosCall({

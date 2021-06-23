@@ -1,16 +1,15 @@
-const mongoose  = require("mongoose")
-const  {Schema} = mongoose
+const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
-const LeaderboardSchema = new mongoose.Schema({
-      name:  String,
-      quizname :String,
-      score : Number,
-      }
-  ,
-{timestamps:true} );
+const LeaderboardSchema = new Schema(
+  {
+    name: { type: String, required: true },
+    quizname: { type: String, required: true },
+    score: { type: Number, required: true },
+  },
+  { timestamps: true }
+);
 
+const Leaderboard = model("Leaderboard", LeaderboardSchema);
 
-const Leaderboard = mongoose.model("Leaderboard", LeaderboardSchema);
-
-
-module.exports = { Leaderboard }
+module.exports = { Leaderboard };

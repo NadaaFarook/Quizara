@@ -32,6 +32,17 @@
   margin: 0.5rem;
   font-size: larger;
 }
+.Result p{
+    font-size: large;
+    padding: 1rem;
+}
+.Result p a{
+      
+    color: #006351;
+    font-weight: bold;
+    text-decoration: none;
+
+}
 
 .red {
   background-color: #982323 !important;

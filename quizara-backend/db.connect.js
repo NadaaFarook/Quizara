@@ -1,17 +1,16 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 
-const url = "mongodb+srv://NadaFarook:nada19@neog-cluster.wbp3g.mongodb.net/quiz?retryWrites=true&w=majority"
-async function  initializeDBConnection(){
+async function initializeDBConnection() {
   // Connecting to DB
 
-  try{
-    await mongoose.connect(url, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-  })
-  console.log('Server starting...')
-  }catch(error){
-      console.log(error)
-    }
+  try {
+    await mongoose.connect(process.env.DB_STRING, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    });
+    console.log("Server starting...");
+  } catch (error) {
+    console.log(error);
+  }
 }
-module.exports = { initializeDBConnection }
+module.exports = { initializeDBConnection };
